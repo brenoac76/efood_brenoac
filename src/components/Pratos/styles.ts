@@ -17,7 +17,7 @@ export const Card = styled.div`
 export const TituloTag = styled.h3`
   font-weight: 700;
   font-size: 16px;
-  line-height: 18, 75px;
+  line-height: 18.75px;
   display: block;
   margin-left: 8px;
 

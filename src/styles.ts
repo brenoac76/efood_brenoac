@@ -29,8 +29,8 @@ body {
 
 
 .image {
-    height: 1em; /* Altura da imagem igual ao tamanho da fonte */
-    vertical-align: middle; /* Alinhamento vertical da imagem com o texto */
+    height: 1em;
+    vertical-align: middle;
     margin-right: 8px;
 }
 `;
