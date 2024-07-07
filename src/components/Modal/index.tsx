@@ -1,0 +1,43 @@
+import {
+  Overlay,
+  ModalContainer,
+  ImgContainer,
+  Title,
+  Description,
+  Button,
+  DescriptionsContainer,
+} from './styles';
+
+type ModalProps = {
+  image: string;
+  title: string;
+  description: string;
+  modalDescription: string;
+  onClose: () => void;
+};
+
+const Modal = ({ image, title, modalDescription, onClose }: ModalProps) => {
+  const [mainDescription, serveDescription] =
+    modalDescription.split(' Serve: ');
+  return (
+    <Overlay onClick={onClose}>
+      <ModalContainer
+        onClick={(e: { stopPropagation: () => any }) => e.stopPropagation()}
+      >
+        <ImgContainer src={image} alt={title} />
+        <DescriptionsContainer>
+          <Title>{title}</Title>
+          <Description>
+            {mainDescription}
+            <br />
+            <br />
+            {serveDescription && `Serve: ${serveDescription}`}
+          </Description>
+          <Button onClick={onClose}>Adicionar ao carrinho - R$ 60,90</Button>
+        </DescriptionsContainer>
+      </ModalContainer>
+    </Overlay>
+  );
+};
+
+export default Modal;
