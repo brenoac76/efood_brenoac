@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 336px 0;
-  margin-bottom: 240px;
+  margin-bottom: 160px;
 `;
 
 export const List = styled.ul`

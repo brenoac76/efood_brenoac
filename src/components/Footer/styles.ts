@@ -6,21 +6,21 @@ export const Container = styled.footer`
   width: 100%;
   height: 298px;
   margin-top: -240px; /* Subtraído para ajustar o espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Logo = styled.div`
-  padding-left: 621px;
   padding-top: 40px;
-  width: 100%;
 `;
 
 export const Links = styled.div`
-  width: 24px;
-  height: 24px;
   display: flex;
   gap: 8px;
-  margin-left: 639px;
   margin-top: 32.5px;
+  justify-content: center;
 `;
 
 export const Texto = styled.p`

@@ -6,13 +6,14 @@ import apresentacao from '../../assets/images/apresentacao.png';
 
 const Hero2 = () => (
   <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
+    <LogoContainer>
+      <img src={logo} alt="EFOOD" />
+    </LogoContainer>
+
     <Titulo>
       <p>Restaurantes</p>
       <p>0 produto(s) no carrinho</p>
     </Titulo>
-    <LogoContainer>
-      <img src={logo} alt="EFOOD" />
-    </LogoContainer>
     <Apresenta>
       <img src={apresentacao} alt="Apresentação" />
     </Apresenta>
