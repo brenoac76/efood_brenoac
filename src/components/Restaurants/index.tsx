@@ -21,13 +21,23 @@ type Props = {
   note: number;
   description: string;
   id: number;
+  destacado: boolean;
 };
 
-const Product = ({ image, infos, title, note, description, id }: Props) => {
+const Product = ({
+  image,
+  infos,
+  title,
+  note,
+  description,
+  id,
+  destacado,
+}: Props) => {
   return (
     <Card>
       <ImgContainer src={image} alt={title} />
       <Infos>
+        {destacado && <Tag>Destaque da semana</Tag>}
         <Tag>{infos}</Tag>
       </Infos>
       <TituloGlobal>

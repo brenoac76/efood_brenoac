@@ -20,6 +20,7 @@ export const RestaurantsList = ({ foods }: Props) => (
             note={food.avaliacao}
             description={food.descricao}
             id={food.id}
+            destacado={food.destacado}
           />
         ))}
       </List>

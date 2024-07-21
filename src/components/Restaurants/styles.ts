@@ -16,6 +16,7 @@ export const Card = styled.div`
 
   ${TagContainer} {
     margin-right: 0;
+    margin-left: 8px;
   }
 `;
 
