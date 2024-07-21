@@ -15,9 +15,16 @@ type Props = {
   title: string;
   description: string;
   modalDescription: string;
+  porcao: string;
 };
 
-const Pratos = ({ image, title, description, modalDescription }: Props) => {
+const Pratos = ({
+  image,
+  title,
+  description,
+  modalDescription,
+  porcao,
+}: Props) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -53,6 +60,7 @@ const Pratos = ({ image, title, description, modalDescription }: Props) => {
           description={modalDescription}
           onClose={handleCloseModal}
           modalDescription={modalDescription}
+          porcao={porcao}
         />
       )}
     </>

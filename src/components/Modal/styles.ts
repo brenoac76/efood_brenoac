@@ -42,23 +42,25 @@ export const DescriptionsContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  width: 140px;
   height: 21px;
   font-size: 18px;
   font-weight: 900;
   color: ${cores.branca};
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   width: 656px;
-  height: 176px;
+  max-height: 176px;
+  height: 100%;
   color: ${cores.branca};
   font-size: 14px;
   padding-top: 16px;
-
   text-align: left;
   white-space: pre-wrap;
   line-height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Button = styled.button`

@@ -5,11 +5,12 @@ export const Container = styled.footer`
   background-color: ${cores.rosa_claro_tag};
   width: 100%;
   height: 298px;
-  margin-top: -240px; /* Subtraído para ajustar o espaço */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 export const Logo = styled.div`

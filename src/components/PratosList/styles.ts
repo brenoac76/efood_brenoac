@@ -7,7 +7,10 @@ export const Container = styled.div`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 32px;
-  height: 380px;
+  row-gap: 32px;
+  width: 100%;
+  flex: 1;
+  margin-bottom: -360px;
 `;

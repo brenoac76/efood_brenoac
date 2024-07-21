@@ -27,7 +27,6 @@ body {
     margin: 0 auto;
 }
 
-
 .image {
     height: 1em;
     vertical-align: middle;

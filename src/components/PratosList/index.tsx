@@ -1,26 +1,30 @@
 import { Container, List } from './styles';
-
-import Food from '../../models/Food';
 import Pratos from '../Pratos';
+import { Food } from '../../pages/Home';
 
 export type Props = {
   foods: Food[];
 };
 
-export const PratosList = ({ foods }: Props) => (
+const PratosList = ({ foods }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {foods.map((food) => (
-          <Pratos
-            key={food.id}
-            image={food.image}
-            title={food.title}
-            description={food.description}
-            modalDescription={food.modalDescription}
-          />
-        ))}
+        {foods.flatMap((food) =>
+          food.cardapio.map((item) => (
+            <Pratos
+              key={item.id}
+              image={item.foto}
+              title={item.nome}
+              description={item.descricao}
+              modalDescription={item.descricao}
+              porcao={item.porcao}
+            />
+          )),
+        )}
       </List>
     </div>
   </Container>
 );
+
+export default PratosList;

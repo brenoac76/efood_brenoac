@@ -3,26 +3,31 @@ import { cores } from '../../styles';
 import { TagContainer } from '../Tag/styles';
 
 export const Card = styled.div`
-  background-color: ${cores.rosa};
+  background-color: ${cores.branca};
   display: inline-block;
   position: relative;
-  width: 320px;
-  height: 338px;
+  width: 472px;
+  height: 398px;
   margin-bottom: 48px;
-  color: ${cores.branca} ${TagContainer} {
-    margin-right: 8px;
+  border-top: 0px solid ${cores.rosa};
+  border-right: 1px solid ${cores.rosa};
+  border-bottom: 1px solid ${cores.rosa};
+  border-left: 1px solid ${cores.rosa};
+
+  ${TagContainer} {
+    margin-right: 0;
   }
 `;
 
 export const TituloTag = styled.h3`
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 18.75px;
+  font-weight: 700;
+  font-size: 18px;
   display: block;
-  margin-left: 8px;
-
-  color: ${cores.rosa_claro_tag};
+  margin-left: 7px;
+  margin-bottom: 16px;
+  color: ${cores.rosa};
 `;
+
 export const Nota = styled.h3`
   font-weight: 700;
   font-size: 18px;
@@ -30,6 +35,7 @@ export const Nota = styled.h3`
   display: block;
   color: ${cores.rosa};
 `;
+
 export const Descricao = styled.p`
   font-size: 14px;
   font-weight: 400;
@@ -39,22 +45,25 @@ export const Descricao = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 8px;
+  margin-bottom: 16px;
   margin-left: 8px;
   margin-right: 8px;
-  width: 304px;
-  color: ${cores.rosa_claro_tag};
+  width: 456px;
+  color: ${cores.rosa};
 `;
+
 export const Infos = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
 `;
+
 export const TituloNota = styled.h3`
   display: flex;
   justify-content: space-between;
   width: 100%;
 `;
+
 export const TituloGlobal = styled.h3`
   display: flex;
   margin-top: 8px;
@@ -64,16 +73,14 @@ export const TituloGlobal = styled.h3`
 
 export const Button = styled.div`
   position: absolute;
-  bottom: 8px;
-  left: 8px;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 24px;
 `;
 
 export const ImgContainer = styled.img`
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  height: 167px;
 `;

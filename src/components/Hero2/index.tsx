@@ -1,9 +1,14 @@
 import { Imagem, LogoContainer, Apresenta, Titulo } from './styles';
-import heroImg from '../../assets/images/fundo.png';
 import logo from '../../assets/images/logo.png';
-import apresentacao from '../../assets/images/apresentacao.png';
+import heroImg from '../../assets/images/fundo.png';
 
-const Hero2 = () => (
+type Hero2Props = {
+  capa: string;
+  tipo: string;
+  titulo: string;
+};
+
+const Hero2 = ({ capa, tipo, titulo }: Hero2Props) => (
   <Imagem style={{ backgroundImage: `url(${heroImg})` }}>
     <LogoContainer>
       <img src={logo} alt="EFOOD" />
@@ -13,10 +18,10 @@ const Hero2 = () => (
       <p>0 produto(s) no carrinho</p>
     </Titulo>
     <Apresenta>
-      <img src={apresentacao} alt="Apresentação" />
+      <img src={capa} alt="Apresentação" />
       <div className="text-wrapper">
-        <div className="text-italiana">italiana</div>
-        <div className="text-dolceVita">La Dolce Vita Trattoria</div>
+        <div className="text-italiana">{tipo}</div>
+        <div className="text-dolceVita">{titulo}</div>
       </div>
     </Apresenta>
   </Imagem>

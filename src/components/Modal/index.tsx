@@ -13,12 +13,18 @@ type ModalProps = {
   title: string;
   description: string;
   modalDescription: string;
+  porcao: string;
   onClose: () => void;
 };
 
-const Modal = ({ image, title, modalDescription, onClose }: ModalProps) => {
-  const [mainDescription, serveDescription] =
-    modalDescription.split(' Serve: ');
+const Modal = ({
+  image,
+  title,
+  modalDescription,
+  porcao,
+  onClose,
+}: ModalProps) => {
+  const [mainDescription] = modalDescription.split(' Serve: ');
   return (
     <Overlay onClick={onClose}>
       <ModalContainer
@@ -29,9 +35,7 @@ const Modal = ({ image, title, modalDescription, onClose }: ModalProps) => {
           <Title>{title}</Title>
           <Description>
             {mainDescription}
-            <br />
-            <br />
-            {serveDescription && `Serve: ${serveDescription}`}
+            <div>{porcao && `Serve: ${porcao}`}</div>
           </Description>
           <Button onClick={onClose}>Adicionar ao carrinho - R$ 60,90</Button>
         </DescriptionsContainer>

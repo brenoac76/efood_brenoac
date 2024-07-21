@@ -1,30 +1,24 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import { ProductsList } from './components/ProductsList';
 import { GlobalCss } from './styles';
 import Home from './pages/Home';
 import Restaurants from './pages/Restaurants';
-
-const rotas = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/restaurants',
-    element: <Restaurants />,
-  },
-]);
+import RestaurantDetail from './pages/RestaurantDetail';
 
 function App() {
   return (
     <>
       <GlobalCss />
-      <div>
-        <RouterProvider router={rotas} />
-        <ProductsList foods={[]} />
-        <Footer />
-      </div>
+      <Router>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/restaurants" element={<Restaurants />} />
+            <Route path="/restaurant/:id" element={<RestaurantDetail />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </>
   );
 }
