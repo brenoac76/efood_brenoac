@@ -15,6 +15,7 @@ export const ButtonContainer = styled.button`
   bottom: 8px;
   left: 8px;
   border: none;
+  cursor: pointer;
 `;
 
 export const ButtonLink = styled(Link)`

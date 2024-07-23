@@ -37,7 +37,9 @@ const Modal = ({
             {mainDescription}
             <div>{porcao && `Serve: ${porcao}`}</div>
           </Description>
-          <Button onClick={onClose}>Adicionar ao carrinho - R$ 60,90</Button>
+          <Button type="button" title="Adicionar ao carrinho" onClick={onClose}>
+            Adicionar ao carrinho - R$ 60,90
+          </Button>
         </DescriptionsContainer>
       </ModalContainer>
     </Overlay>

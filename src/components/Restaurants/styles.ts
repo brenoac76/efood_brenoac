@@ -78,6 +78,7 @@ export const Button = styled.div`
   left: 0;
   width: 100px;
   height: 24px;
+  cursor: pointer;
 `;
 
 export const ImgContainer = styled.img`
