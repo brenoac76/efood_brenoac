@@ -67,7 +67,7 @@ export const Apresenta = styled.div`
     font-weight: 100;
     font-size: 32px;
     line-height: 37.5px;
-    width: 101px;
+    width: 50px;
     height: 33.25px;
     color: ${cores.branca};
   }
