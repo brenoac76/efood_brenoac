@@ -1,21 +1,19 @@
 import Hero2 from '../../components/Hero2';
-import { useEffect, useState } from 'react';
-import { Food } from '../Home';
 import PratosList from '../../components/PratosList';
+import { useGetFeaturedFoodQuery } from '../../services/api';
+import { Food } from '../Home';
 
 const Restaurants = () => {
-  const [pratos, setPratos] = useState<Food[]>([]);
+  const { data: pratos = [], isLoading } = useGetFeaturedFoodQuery();
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((data) => setPratos(data));
-  }, []);
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <>
       <Hero2 capa={''} tipo={''} titulo={''} />
-      <PratosList foods={pratos} />
+      <PratosList foods={pratos as Food[]} />
     </>
   );
 };

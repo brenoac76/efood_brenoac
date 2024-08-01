@@ -3,18 +3,23 @@ import { useParams } from 'react-router-dom';
 import { Food } from '../Home';
 import PratosList from '../../components/PratosList';
 import Hero2 from '../../components/Hero2';
+import { useGetFeaturedFoodQuery } from '../../services/api';
 
 const RestaurantDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const { data: restaurantes = [], isLoading } = useGetFeaturedFoodQuery();
   const [restaurante, setRestaurante] = useState<Food | null>(null);
 
   useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((data) => setRestaurante(data));
-  }, [id]);
+    if (Array.isArray(restaurantes)) {
+      const selectedRestaurant = restaurantes.find(
+        (rest: Food) => rest.id.toString() === id,
+      );
+      setRestaurante(selectedRestaurant || null);
+    }
+  }, [restaurantes, id]);
 
-  if (!restaurante) {
+  if (isLoading || !restaurante) {
     return <div>Carregando...</div>;
   }
 

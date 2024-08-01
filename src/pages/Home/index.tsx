@@ -1,6 +1,6 @@
 import { RestaurantsList } from '../../components/RestaurantsList';
 import Hero from '../../components/Hero';
-import { useEffect, useState } from 'react';
+import { useGetFeaturedFoodQuery } from '../../services/api';
 
 export type Food = {
   id: number;
@@ -21,18 +21,16 @@ export type Food = {
 };
 
 const Home = () => {
-  const [restaurantes, setRestaurantes] = useState<Food[]>([]);
+  const { data: restaurantes = [], isLoading } = useGetFeaturedFoodQuery();
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((data) => setRestaurantes(data));
-  }, []);
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <>
       <Hero />
-      <RestaurantsList foods={restaurantes} />{' '}
+      <RestaurantsList foods={restaurantes as Food[]} />
     </>
   );
 };

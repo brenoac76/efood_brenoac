@@ -14,11 +14,13 @@ const PratosList = ({ foods }: Props) => (
           food.cardapio.map((item) => (
             <Pratos
               key={item.id}
+              id={item.id}
               image={item.foto}
               title={item.nome}
               description={item.descricao}
               modalDescription={item.descricao}
               porcao={item.porcao}
+              preco={item.preco}
             />
           )),
         )}

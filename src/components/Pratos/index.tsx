@@ -11,19 +11,23 @@ import ButtonPratos from '../ButtonPratos';
 import Modal from '../Modal';
 
 type Props = {
+  id: number;
   image: string;
   title: string;
   description: string;
   modalDescription: string;
   porcao: string;
+  preco: number;
 };
 
 const Pratos = ({
+  id,
   image,
   title,
   description,
   modalDescription,
   porcao,
+  preco,
 }: Props) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -55,12 +59,14 @@ const Pratos = ({
       </Card>
       {isModalOpen && (
         <Modal
+          id={id}
           image={image}
           title={title}
           description={modalDescription}
           onClose={handleCloseModal}
           modalDescription={modalDescription}
           porcao={porcao}
+          preco={preco}
         />
       )}
     </>
