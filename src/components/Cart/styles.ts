@@ -144,3 +144,9 @@ export const CartItemContainer = styled.div`
   background-color: ${cores.rosa_claro_tag};
   margin-bottom: 16px;
 `;
+
+export const ErrorMessage = styled.p`
+  color: #ffb6c1; /* Cor rosa claro */
+  margin-top: 10px;
+  font-size: 14px;
+`;

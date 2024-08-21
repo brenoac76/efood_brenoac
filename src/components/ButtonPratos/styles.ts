@@ -16,6 +16,9 @@ export const ButtonContainer = styled.button`
   left: 8px;
   border: none;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 340px;
+  }
 `;
 
 export const ButtonLink = styled(Link)`

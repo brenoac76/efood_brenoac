@@ -39,6 +39,22 @@ export const Titulo = styled.h2`
   gap: 710px;
   width: 100%;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    gap: 180px;
+    width: 95%;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    font-size: 16px;
+    gap: 490px;
+    width: 100%;
+    align-items: center;
+    padding: 0 8px;
+  }
 `;
 
 export const CartButton = styled.button`
@@ -55,6 +71,14 @@ export const CartButton = styled.button`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    font-size: 16px;
   }
 `;
 
@@ -83,6 +107,13 @@ export const Apresenta = styled.div`
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      padding: 0 12px;
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      padding: 0 8px;
+    }
   }
 
   .text-italiana {

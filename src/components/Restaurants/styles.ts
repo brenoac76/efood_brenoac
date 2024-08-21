@@ -18,6 +18,17 @@ export const Card = styled.div`
     margin-right: 0;
     margin-left: 8px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 100%;
+  }
 `;
 
 export const TituloTag = styled.h3`
@@ -49,8 +60,16 @@ export const Descricao = styled.p`
   margin-bottom: 16px;
   margin-left: 8px;
   margin-right: 8px;
-  width: 456px;
+  width: 100%;
   color: ${cores.rosa};
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 90%;
+  }
 `;
 
 export const Infos = styled.div`

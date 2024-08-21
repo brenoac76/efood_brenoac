@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { Slide, toast } from 'react-toastify';
 
 interface CartItem {
   id: number;
@@ -28,13 +28,17 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id,
       );
       if (itemIndex > -1) {
-        toast.warn('Produto já adicionado ao carrinho', {
+        toast.warn('Prato já adicionado ao carrinho', {
           position: 'top-right',
+          transition: Slide,
+          autoClose: 500,
         });
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
-        toast.success('Produto adicionado ao carrinho', {
+        toast.success('Prato adicionado ao carrinho', {
           position: 'top-right',
+          transition: Slide,
+          autoClose: 500,
         });
       }
     },

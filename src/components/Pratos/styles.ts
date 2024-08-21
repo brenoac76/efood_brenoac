@@ -12,6 +12,13 @@ export const Card = styled.div`
   color: ${cores.branca} ${TagContainer} {
     margin-right: 8px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+  }
 `;
 
 export const TituloTag = styled.h3`
@@ -76,4 +83,8 @@ export const ImgContainer = styled.img`
   padding-right: 8px;
   padding-top: 8px;
   height: 167px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
